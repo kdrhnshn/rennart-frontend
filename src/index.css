@@ -1,0 +1,32 @@
+
+@font-face{
+  font-family: MontserratMedium;
+  src: url("../src/assets/fonts/montserat/Montserrat-Medium.otf");
+}
+
+
+@font-face {
+  font-family: AvenirBook;
+  src: url("../src/assets/fonts/avenir/Avenir-Book.ttf");
+}
+
+@font-face {
+  font-family: MontserratReg;
+  src: url("../src/assets/fonts/montserat/Montserrat-Regular.ttf");
+}
+
+
+@import "tailwindcss";
+
+@theme{
+  --font-avenirb: "AvenirBook", "sans-serif";
+  --font-montserratr: "MontserratReg", "sans-serif";
+  --font-montserratm: "MontserratMedium", "sans-serif";
+}
+
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: black !important;
+
+}
