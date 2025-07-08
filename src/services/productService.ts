@@ -8,6 +8,10 @@ type FilterParams = {
   maxRating?: string;
 };
 
+// Ortam değişkeninden backend URL'yi alıyoruz
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
+
 export const getProducts = async (filters?: FilterParams): Promise<Product[]> => {
   const params = new URLSearchParams();
 
@@ -17,8 +21,7 @@ export const getProducts = async (filters?: FilterParams): Promise<Product[]> =>
   if (filters?.maxRating) params.append("maxRating", filters.maxRating);
 
   const response = await axios.get<Product[]>(
-    `http://localhost:3000/products?${params.toString()}`
+    `${API_BASE_URL}?${params.toString()}`
   );
-
   return response.data;
 };
