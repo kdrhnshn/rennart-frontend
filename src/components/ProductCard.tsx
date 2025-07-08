@@ -50,8 +50,10 @@ const ProductCard = ({ product }: Props) => {
 
       <div className="flex items-center text-[14px] gap-1 mt-2 text-yellow-400">
         {[...Array(5)].map((_, i) => {
-          const filled = i < Math.floor(product.rating);
-          const half = i === Math.floor(product.rating) && product.rating % 1 >= 0.5;
+          const rating = Number(product.rating ?? 0);
+
+          const filled = i < Math.floor(rating);
+          const half = i === Math.floor(rating) && rating % 1 >= 0.5;
 
           return (
             <span key={i}>
